@@ -8,14 +8,29 @@ public class Codigos {
 		String sexo="HM";
 		String curso="12";
 		String codigo="";
-		boolean verif=true;
+		String codigos_totales="";
+		int n = 0;
+		String subaños="", subsexo="", subcurso="";
 		do{
-			System.out.println("Inserte un código:");
+			do{
+				System.out.println("Inserte un código de 8 caracteres:");
 			codigo=teclado.nextLine();
-			if (codigo.substring(0, 3).equals("1995")){
-				//!cadena1.equals(cadena2);
+			if (codigo.length()!=8){
+				System.out.println("Tiene que ser de 8 caracteres");
 			}
-		}while(verif=false);
+			}while(codigo.length()!=8);
+			
+			int año=Integer.parseInt(codigo.substring(0,4));
+				if(año>=1995 || año<=1990){
+					System.out.println("Año Correcto");			
+				}else{
+					System.out.println("Año Incorrecto");
+				}
+			
+		}while(n!=1);
+		System.out.println(codigo.substring(0, 4));
+		System.out.println(codigo.substring(4, 5));
+		System.out.println(codigo.substring(5, 6));
 	}
 
 }
